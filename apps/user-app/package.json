@@ -1,0 +1,25 @@
+{
+  "name": "user-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite --port 8003",
+    "build": "tsc && vite build",
+    "preview": "vite preview --port 8003",
+    "clean": "rm -rf dist node_modules"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.0",
+    "antd": "^5.13.0",
+    "@ant-design/icons": "^5.2.6",
+    "vite-plugin-qiankun": "^1.0.15"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "typescript": "^5.3.0",
+    "vite": "^5.0.0"
+  }
+}
