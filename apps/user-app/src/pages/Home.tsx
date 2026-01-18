@@ -12,6 +12,8 @@ import {
   message,
   Divider,
   Progress,
+  Layout,
+  Typography,
 } from "antd";
 import {
   UserOutlined,
@@ -23,6 +25,9 @@ import {
   DeleteOutlined,
 } from "@ant-design/icons";
 import type { ColumnsType } from "antd/es/table";
+
+const { Header } = Layout;
+const { Title, Text } = Typography;
 
 interface User {
   id: number;
@@ -200,22 +205,32 @@ const Home = () => {
 
   return (
     <div className="user-home">
-      <div
-        title="用户管理系统"
-        subTitle="React + Ant Design"
-        backIcon={<ArrowLeftOutlined />}
-        onBack={goBack}
-        extra={[
-          <Button
-            key="1"
-            type="primary"
-            icon={<PlusOutlined />}
-            onClick={handleAdd}
-          >
-            新增用户
-          </Button>,
-        ]}
-      />
+      <Header
+        style={{
+          background: "#fff",
+          padding: "0 24px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          height: "auto",
+          lineHeight: "normal",
+          paddingTop: 16,
+          paddingBottom: 16,
+        }}
+      >
+        <Space align="center">
+          <Button type="text" icon={<ArrowLeftOutlined />} onClick={goBack} />
+          <div>
+            <Title level={4} style={{ margin: 0 }}>
+              用户管理系统
+            </Title>
+            <Text type="secondary">React + Ant Design</Text>
+          </div>
+        </Space>
+        <Button type="primary" icon={<PlusOutlined />} onClick={handleAdd}>
+          新增用户
+        </Button>
+      </Header>
 
       <Divider />
 

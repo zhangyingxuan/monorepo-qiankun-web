@@ -3,13 +3,13 @@ import vue from '@vitejs/plugin-vue'
 import qiankun from 'vite-plugin-qiankun'
 import { resolve } from 'path'
 
-export default defineConfig({
-  // 关键：设置 base 为绝对路径，qiankun 开发模式必需
-  base: 'http://localhost:8002/',
+export default defineConfig(({ mode }) => ({
+  // 开发模式使用绝对路径，生产构建使用相对路径
+  base: mode === 'development' ? 'http://localhost:8002/' : '/role/',
   plugins: [
     vue(),
     qiankun('role-app', {
-      useDevMode: true
+      useDevMode: mode === 'development'
     })
   ],
   resolve: {
@@ -25,4 +25,4 @@ export default defineConfig({
       'Access-Control-Allow-Origin': '*'
     }
   }
-})
+}))

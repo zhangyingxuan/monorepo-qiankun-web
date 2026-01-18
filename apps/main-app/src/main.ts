@@ -4,7 +4,7 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import 'element-plus/dist/index.css'
 import App from './App.vue'
 import router from './router'
-import { registerMicroApps, start, loadMicroApp } from 'qiankun'
+import { registerMicroApps, start } from 'qiankun'
 
 const app = createApp(App)
 

@@ -4,6 +4,11 @@ export default defineNuxtConfig({
 
   ssr: false, // 微前端子应用禁用 SSR
 
+  // 生产环境设置 baseURL
+  app: {
+    baseURL: process.env.NODE_ENV === 'development' ? '/' : '/shop/'
+  },
+
   modules: [
     '@element-plus/nuxt',
     '@pinia/nuxt'
