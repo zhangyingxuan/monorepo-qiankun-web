@@ -18,7 +18,7 @@ let performanceMonitor: any = null
 const render = (container?: HTMLElement) => {
   // 标记渲染开始
   if (performanceMonitor) {
-    performanceMonitor.markRenderStart('role-app')
+    performanceMonitor.markRenderStart('map-app')
   }
   const renderStartTime = performance.now()
 
@@ -36,9 +36,9 @@ const render = (container?: HTMLElement) => {
   // 标记渲染结束
   const renderEndTime = performance.now()
   if (performanceMonitor) {
-    performanceMonitor.markRenderEnd('role-app')
+    performanceMonitor.markRenderEnd('map-app')
   }
-  console.log(`[role-app] 渲染耗时: ${(renderEndTime - renderStartTime).toFixed(2)}ms`)
+  console.log(`[map-app] 渲染耗时: ${(renderEndTime - renderStartTime).toFixed(2)}ms`)
 }
 
 renderWithQiankun({
@@ -48,45 +48,45 @@ renderWithQiankun({
 
     // 标记 mount 开始
     if (performanceMonitor) {
-      performanceMonitor.markMountStart('role-app')
+      performanceMonitor.markMountStart('map-app')
     }
     const mountStartTime = performance.now()
 
-    console.log('[role-app] mount', props)
+    console.log('[map-app] mount', props)
     render(props.container)
 
     // 标记 mount 结束
     const mountEndTime = performance.now()
     if (performanceMonitor) {
-      performanceMonitor.markMountEnd('role-app')
+      performanceMonitor.markMountEnd('map-app')
     }
-    console.log(`[role-app] mount 阶段耗时: ${(mountEndTime - mountStartTime).toFixed(2)}ms`)
+    console.log(`[map-app] mount 阶段耗时: ${(mountEndTime - mountStartTime).toFixed(2)}ms`)
   },
   bootstrap() {
     // 标记 bootstrap 开始
     if (performanceMonitor) {
-      performanceMonitor.markBootstrapStart('role-app')
+      performanceMonitor.markBootstrapStart('map-app')
     }
     const bootstrapStartTime = performance.now()
 
-    console.log('[role-app] bootstrap')
+    console.log('[map-app] bootstrap')
 
     // 标记 bootstrap 结束
     const bootstrapEndTime = performance.now()
     if (performanceMonitor) {
-      performanceMonitor.markBootstrapEnd('role-app')
+      performanceMonitor.markBootstrapEnd('map-app')
     }
-    console.log(`[role-app] bootstrap 阶段耗时: ${(bootstrapEndTime - bootstrapStartTime).toFixed(2)}ms`)
+    console.log(`[map-app] bootstrap 阶段耗时: ${(bootstrapEndTime - bootstrapStartTime).toFixed(2)}ms`)
   },
   unmount() {
-    console.log('[role-app] unmount')
+    console.log('[map-app] unmount')
     if (app) {
       app.unmount()
       app = null
     }
   },
   update(props) {
-    console.log('[role-app] update', props)
+    console.log('[map-app] update', props)
   }
 })
 

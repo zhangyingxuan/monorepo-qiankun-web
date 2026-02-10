@@ -34,3 +34,12 @@ declare module 'qiankun' {
   export function registerMicroApps(apps: RegistrableApp[], lifeCycles?: LifeCycles): void
   export function start(opts?: StartOpts): void
 }
+
+// 性能监控全局类型声明
+import type { PerformanceMonitor } from './utils/performance-monitor'
+
+declare global {
+  interface Window {
+    __MICRO_APP_PERF__: PerformanceMonitor
+  }
+}

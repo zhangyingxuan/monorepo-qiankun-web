@@ -31,6 +31,10 @@
             <el-icon><UserFilled /></el-icon>
             <span>用户管理</span>
           </el-menu-item>
+          <el-menu-item index="/map">
+            <el-icon><Location /></el-icon>
+            <span>地图应用</span>
+          </el-menu-item>
         </el-menu>
       </el-aside>
 
@@ -99,6 +103,7 @@ const activeMenu = computed(() => {
   if (path.startsWith("/shop")) return "/shop";
   if (path.startsWith("/role")) return "/role";
   if (path.startsWith("/user")) return "/user";
+  if (path.startsWith("/map")) return "/map";
   return "/";
 });
 
@@ -115,7 +120,11 @@ const isShopApp = computed(() => {
 // role-app 和 user-app 使用 qiankun 方式
 const isMicroApp = computed(() => {
   const path = route.path;
-  return path.startsWith("/role") || path.startsWith("/user");
+  return (
+    path.startsWith("/role") ||
+    path.startsWith("/user") ||
+    path.startsWith("/map")
+  );
 });
 
 const currentModule = computed(() => {
@@ -123,6 +132,7 @@ const currentModule = computed(() => {
   if (path.startsWith("/shop")) return "商城管理";
   if (path.startsWith("/role")) return "角色管理";
   if (path.startsWith("/user")) return "用户管理";
+  if (path.startsWith("/map")) return "地图应用";
   return "";
 });
 </script>
