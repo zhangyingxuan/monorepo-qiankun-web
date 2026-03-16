@@ -60,6 +60,25 @@
           </div>
         </el-card>
       </el-col>
+
+      <el-col :span="8">
+        <el-card
+          shadow="hover"
+          class="app-card gomoku-card"
+          @click="goToApp('/gomoku')"
+        >
+          <div class="card-content">
+            <el-icon class="card-icon" :size="48"><Grid /></el-icon>
+            <h3>五子棋游戏</h3>
+            <p>基于 React + Canvas 的双人五子棋游戏</p>
+            <div class="tech-tags">
+              <el-tag size="small">React</el-tag>
+              <el-tag size="small" type="success">Canvas</el-tag>
+              <el-tag size="small" type="warning">响应式</el-tag>
+            </div>
+          </div>
+        </el-card>
+      </el-col>
     </el-row>
 
     <el-row :gutter="24" class="info-row">
@@ -119,6 +138,8 @@ const microApps = [
   { name: "商城管理", tech: "Nuxt 3", port: "8001" },
   { name: "角色管理", tech: "Vue 3 + TDesign", port: "8002" },
   { name: "用户管理", tech: "React + Ant Design", port: "8003" },
+  { name: "地图应用", tech: "Vue 3 + Leaflet", port: "8004" },
+  { name: "五子棋", tech: "React + Canvas", port: "8005" },
 ];
 
 const goToApp = (path: string) => {
@@ -197,6 +218,10 @@ const goToApp = (path: string) => {
 
   .user-card .card-icon {
     color: #e6a23c;
+  }
+
+  .gomoku-card .card-icon {
+    color: #9b59b6;
   }
 
   .info-row {

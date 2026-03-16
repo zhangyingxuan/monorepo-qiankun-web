@@ -8,9 +8,9 @@ export default defineConfig({
     }),
   ],
   server: {
-    port: 8005,
+    port: 8006,
     cors: true,
-    origin: 'http://localhost:8005'
+    origin: 'http://localhost:8006'
   },
   base: './',
   build: {

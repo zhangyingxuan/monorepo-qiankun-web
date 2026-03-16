@@ -4,7 +4,8 @@
   "private": true,
   "packageManager": "pnpm@8.15.0",
   "scripts": {
-    "dev": "turbo run dev --concurrency=6",
+    "dev": "turbo run dev --concurrency=10",
+    "dev:filter": "turbo run dev --concurrency=10 --filter=!ocr-app",
     "build": "turbo run build",
     "preview": "turbo run preview",
     "lint": "turbo run lint",

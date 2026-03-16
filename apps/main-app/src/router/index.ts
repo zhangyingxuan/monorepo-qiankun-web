@@ -24,6 +24,16 @@ const router = createRouter({
       path: '/user/:pathMatch(.*)*',
       name: 'user',
       component: () => import('@/views/MicroApp.vue')
+    },
+    {
+      path: '/gomoku/:pathMatch(.*)*',
+      name: 'gomoku',
+      component: () => import('@/views/MicroApp.vue')
+    },
+    {
+      path: '/tank-war/:pathMatch(.*)*',
+      name: 'tank-war',
+      component: () => import('@/views/MicroApp.vue')
     }
   ]
 })

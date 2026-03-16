@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite --port 8005",
+    "dev": "vite --port 8006",
     "build": "tsc && vite build",
-    "preview": "vite preview --port 8005"
+    "preview": "vite preview --port 8006"
   },
   "dependencies": {
     "phaser": "^3.80.0"

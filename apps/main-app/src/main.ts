@@ -18,8 +18,8 @@ app.use(ElementPlus)
 app.use(router)
 
 // 路由变更监听 - 用于捕获应用切换的起始时间
-router.beforeEach((to, from, next) => {
-  const microApps = ['role', 'user', 'map']
+router.beforeEach((to, _from, next) => {
+  const microApps = ['role', 'user', 'map', 'gomoku', 'tank-war', 'ocr']
   const toApp = microApps.find(app => to.path.startsWith(`/${app}`))
 
   if (toApp) {
@@ -29,9 +29,8 @@ router.beforeEach((to, from, next) => {
 })
 
 router.afterEach((to) => {
-  const microApps = ['role', 'user', 'map']
+  const microApps = ['role', 'user', 'map', 'gomoku', 'tank-war', 'ocr']
   const toApp = microApps.find(app => to.path.startsWith(`/${app}`))
-
   if (toApp) {
     performanceMonitor.markRouteChangeEnd(`${toApp}-app`)
   }
@@ -64,6 +63,36 @@ registerMicroApps([
     entry: '//localhost:8004',
     container: '#micro-container',
     activeRule: '/map',
+    props: {
+      mainApp: 'main-app',
+      performanceMonitor // 传递性能监控实例给子应用
+    }
+  },
+  {
+    name: 'gomoku-app',
+    entry: '//localhost:8005',
+    container: '#micro-container',
+    activeRule: '/gomoku',
+    props: {
+      mainApp: 'main-app',
+      performanceMonitor // 传递性能监控实例给子应用
+    }
+  },
+  {
+    name: 'tank-war',
+    entry: '//localhost:8006',
+    container: '#micro-container',
+    activeRule: '/tank-war',
+    props: {
+      mainApp: 'main-app',
+      performanceMonitor // 传递性能监控实例给子应用
+    }
+  },
+  {
+    name: 'ocr-app',
+    entry: '//localhost:8008',
+    container: '#micro-container',
+    activeRule: '/ocr',
     props: {
       mainApp: 'main-app',
       performanceMonitor // 传递性能监控实例给子应用
